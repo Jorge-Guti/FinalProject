@@ -1,14 +1,8 @@
 package pages;
 
-
-import java.awt.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.interactions.HasInputDevices;
-import org.openqa.selenium.interactions.Mouse;
-import org.openqa.selenium.interactions.internal.Locatable;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
@@ -51,9 +45,6 @@ public class DressesPage {
 	@FindBy(xpath="//*[@id=\"center_column\"]/ul/li[3]/div/div[2]/h5/a")
 	WebElement printedSummerDress1;
 	
-//	@FindBy(xpath="//*[@id=\"center_column\"]/ul/li[4]/div/div[2]/h5/a")
-//	WebElement printedSummerDress2;
-	
 	@FindBy(id="group_1")
 	WebElement dressSizeDropdown;
 	
@@ -81,8 +72,10 @@ public class DressesPage {
 	@FindBy(xpath="//*[@id=\"cart_navigation\"]/button")
 	WebElement confirmOrderButton;
 	
+	
 	public void sortBy(String option) throws InterruptedException{
 		sortByDropdown.click();
+		Thread.sleep(3000);
 		sortByDropdown = driver.findElement(By.xpath("//*[@id=\"selectProductSort\"]"));
 		Select select = new Select(sortByDropdown);
 		select.selectByVisibleText(option);
@@ -91,48 +84,35 @@ public class DressesPage {
 	
 	public void dressQuickView() throws InterruptedException{
 		dressItem.click();
+		Thread.sleep(3000);		
 		greenColor.click();
-		Thread.sleep(10000);
-		
-		//HOVER 1
-//		Locatable hoverDress = (Locatable) driver.findElement(By.xpath("//a[@rel='http://automationpractice.com/index.php?id_product=7&controller=product&search_query=dress&results=7']"));
-//		Mouse mouse = ((HasInputDevices) driver).getMouse();
-//
-//		mouse.mouseMove(hoverDress.getCoordinates());
-////		quickViewButton.click();
-		
-		//HOVER 2
-//		Actions action = new Actions(driver);
-//		quickViewButton = driver.findElement(By.xpath("//*[@id=\\\"center_column\\\"]/ul/li[2]/div/div[1]/div/a[2]"));
-//		action.moveToElement(quickViewButton).moveToElement(driver.findElement(By.xpath("//*[@id=\\\"center_column\\\"]/ul/li[2]/div/div[1]/div/a[2]"))).click().build().perform();
-
-//		Thread.sleep(10000);
-		
+		Thread.sleep(5000);
 	}
 	
+	//Adrian, #6
 	public void addAndDeleteProductToCart() throws InterruptedException {
 		listButton.click();
-		Thread.sleep(6000);
+		Thread.sleep(3000);
 		whiteColor.click();
-		Thread.sleep(6000);
+		Thread.sleep(3000);
 		checkoutButton1.click();
-		Thread.sleep(6000);
+		Thread.sleep(3000);
 		checkoutButton2.click();
-		Thread.sleep(6000);
+		Thread.sleep(3000);
 		deleteButton.click();
-		Thread.sleep(6000);
+		Thread.sleep(3000);
 	}
 	
-
+	//Luis, #11
 	public void selectPrintedSummerDress1() throws InterruptedException {
 		printedSummerDress1.click();
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 	}
 	
 	public void selectSize(String size) throws InterruptedException {
 		dressSizeDropdown.click();
+		Thread.sleep(3000);
 		dressSizeDropdown = driver.findElement(By.xpath("//*[@id=\"group_1\"]"));
-		
 		Select select = new Select(dressSizeDropdown);
 		select.selectByVisibleText(size);
 		Thread.sleep(3000);

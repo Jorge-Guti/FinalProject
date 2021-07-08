@@ -1,10 +1,8 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.Select;
 
 public class CreateAccountPage {
 
@@ -109,18 +107,30 @@ public class CreateAccountPage {
 		Thread.sleep(2000);
 		cityTextBox.sendKeys(city);
 		Thread.sleep(2000);
-		stateDropdown.click();
-		stateDropdown = driver.findElement(By.xpath("//*[@id=\"selectProductSort\"]"));
-		Select select = new Select(stateDropdown);
-		select.selectByVisibleText(state);
-		Thread.sleep(6000);
+		
+		stateDropdown.sendKeys(state);
+//		stateDropdown.click();
+//		stateDropdown = driver.findElement(By.id("id_state"));
+////	stateDropdown = driver.findElement(By.xpath("//*[@id=\"selectProductSort\"]"));
+//		Select select = new Select(stateDropdown);
+//		select.selectByVisibleText(state);
+		Thread.sleep(2000);
+		
 		zipCodeTextBox.sendKeys(pstcode);
 		Thread.sleep(2000);
 		mobilePhoneTextBox.sendKeys(phone);
 		Thread.sleep(2000);
-		cityTextBox.click();
-		Thread.sleep(2000);
+		registerButton.click();
+		Thread.sleep(6000);
 	}
+	
+//	public void chooseState(String state) throws InterruptedException {
+//	stateDropdown.click();
+//	stateDropdown = driver.findElement(By.xpath("//*[@id=\"selectProductSort\"]"));
+//	Select select = new Select(stateDropdown);
+//	select.selectByVisibleText(state);
+//	Thread.sleep(6000);
+//}
 	
 //	public void fillGender() throws InterruptedException {
 //		mrRadio.click();
@@ -149,13 +159,7 @@ public class CreateAccountPage {
 //		Thread.sleep(2000);
 //	}
 	
-//	public void chooseState(String state) throws InterruptedException {
-//		stateDropdown.click();
-//		stateDropdown = driver.findElement(By.xpath("//*[@id=\"selectProductSort\"]"));
-//		Select select = new Select(stateDropdown);
-//		select.selectByVisibleText(state);
-//		Thread.sleep(6000);
-//	}
+
 	
 //	public void fillPostalCode(String pstcode) throws InterruptedException {
 //		zipCodeTextBox.sendKeys(pstcode);

@@ -1,10 +1,8 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.Select;
 
 public class MainPage {
 
@@ -40,14 +38,8 @@ public class MainPage {
 	@FindBy(xpath="//*[@id=\"block_top_menu\"]/ul/li[1]")
 	WebElement women;
 	
-	// - - - - - - - - - - - - -- - - - - - - - 
-	//Mover a DressesPage(SearchResults) (12)
-	
-	
-	
 	@FindBy(xpath="//*[@id=\"social_block\"]/ul/li[1]/a")
 	WebElement facebookButton;
-	
 	
 	
 	public void searchClothes(String clothes) throws InterruptedException {
@@ -74,7 +66,7 @@ public class MainPage {
 		Thread.sleep(2000);
 	}
 	
-	//  (1)
+	// Adrian (1)
 	public void goWomen() throws InterruptedException {
 		women.click();
 		Thread.sleep(6000);
@@ -83,8 +75,6 @@ public class MainPage {
 		dressesButton.click();
 		Thread.sleep(1000);
 	}
-	
-	
 	
 	
 	public void facebookButton() throws InterruptedException {
