@@ -25,7 +25,7 @@ WebDriver driver;
 	
 
 	@Test
-	public void TC12_Contact_V2() throws InterruptedException{
+	public void TC12_Contact_V3() throws InterruptedException{
 		MainPage mainpage = PageFactory.initElements(driver, MainPage.class);
 		mainpage.sendKeysNewsLetter("a15@gmail.com");
 	}
