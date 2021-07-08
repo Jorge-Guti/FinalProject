@@ -12,12 +12,14 @@ public class AuthenticationPage {
 		this.driver=driver;
 	}
 	
+	//Create Account section elements
 	@FindBy(id="email_create")
 	WebElement createEmailTextBox;
 	
 	@FindBy(id="SubmitCreate")
 	WebElement createAccountButton;
 	
+	//Login With Credentials elements
 	@FindBy(id="email")
 	WebElement emailTextBox;
 	
@@ -32,10 +34,22 @@ public class AuthenticationPage {
 	
 	public void createNewAccount(String email) throws InterruptedException{
 		createEmailTextBox.sendKeys(email);
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		createAccountButton.click();
 		Thread.sleep(2000);
 	}
+
+	public void signIn(String email, String pass) throws InterruptedException {
+		emailTextBox.sendKeys(email);
+		Thread.sleep(1000);
+		passwordTextBox.sendKeys(pass);
+		Thread.sleep(1000);
+		signInButton.click();
+		Thread.sleep(2000);
+	}
 	
+	
+	
+
 	
 }

@@ -12,7 +12,9 @@ public WebDriver driver;
 	
 	@BeforeTest
 	public void setBaseURL() throws InterruptedException {
-		System.setProperty("webdriver.chrome.driver","C:/Users/adrian.vargas.rangel/Documents/chromedriver.exe");
+		//System.setProperty("webdriver.chrome.driver","C:/Users/edgar.cazares/Documents/chromedriver.exe");
+
+		System.setProperty("webdriver.chrome.driver","C://Users//l.ramirez.martinez//Desktop//chromedriver_win32//chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.get("https://www.google.com");
 		driver.manage().window().maximize();
@@ -20,15 +22,15 @@ public WebDriver driver;
 	}
 	
 	@Test
-	public void printHomePageTitle() {
+	public void printHomePageTittle() {
 		String title= driver.getTitle();
 		System.out.println(title);
 	}
 	
 	@Test
-	public void printHomePageTittleWithExtraLetter() {
-		String title= driver.getTitle();
-		System.out.println(title+" from test #2");
+	public void printHomePageTitleWithExtraLetters(){
+		String title = driver.getTitle();
+		System.out.println(title+"from test #2");
 	}
 	
 	@AfterTest
